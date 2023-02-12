@@ -3,11 +3,9 @@ import classes from "./Report.module.css";
 import {Company} from "../../components/Company";
 
 const Report = () => {
+
     return (
-        <>
-
         <section className={classes.section}>
-
             <aside className={classes.aside}>
                 <Company/>
             </aside>
@@ -15,7 +13,6 @@ const Report = () => {
                 Enter info
             </main>
         </section>
-        </>
     );
 };
 

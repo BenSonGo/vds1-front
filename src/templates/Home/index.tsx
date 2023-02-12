@@ -1,17 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import classes from "./Home.module.css";
 import Header from "../../components/Header";
-import {AuthReg} from "../AuthReg";
+import {Register} from "../Register";
 import Report from "../Report";
 import {Route, Routes} from "react-router-dom";
+import {Auth} from "../Auth";
+import {AUTH_TOKEN} from "../../const";
+import axios from "axios";
 
 const Home = () => {
+
     return (
         <div className={classes.home}>
             <Header/>
             <main>
                 <Routes>
-                    <Route path={"/auth"} element={<AuthReg/>}/>
+                    <Route path={"/register"} element={<Register/>}/>
+                    <Route path={"/auth"} element={<Auth/>}/>
                     <Route path={"/report"} element={<Report/>}/>
                 </Routes>
             </main>

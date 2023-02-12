@@ -1,10 +1,10 @@
 import React from 'react';
 import {useForm, Controller} from "react-hook-form";
-import classes from "./AuthReg.module.css";
+import classes from "./Register.module.css";
 import {Button, Input} from "@chakra-ui/react";
 import axios from "axios";
 
-export const AuthReg = () => {
+export const Register = () => {
     const {handleSubmit, control, formState: {errors}} = useForm({
         defaultValues: {
             email: '',
@@ -12,7 +12,7 @@ export const AuthReg = () => {
             password: '',
         }
     });
-    const onSubmit = (data: any) => axios.post('http://127.0.0.1:8080/api/register/', {
+    const onSubmit = (data: any) => axios.post('http://localhost/api/register/', {
         email: data.email,
         name: data.name,
         password: data.password,
@@ -45,7 +45,7 @@ export const AuthReg = () => {
                 }}
                 render={({ field }) => <Input {...field} placeholder={"name"}/>}
             />
-            {errors.email && <span>This field is required</span>}
+            {errors.name && <span>This field is required</span>}
             <Controller
                 control={control}
                 name={"password"}
@@ -55,8 +55,8 @@ export const AuthReg = () => {
                 }}
                 render={({ field }) => <Input {...field} placeholder={"password"}/>}
             />
-            {errors.email && <span>This field is required</span>}
-            <Button type="submit">Reg/Auth</Button>
+            {errors.password && <span>This field is required</span>}
+            <Button type="submit">Register</Button>
 
         </form>
     );
