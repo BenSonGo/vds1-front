@@ -3,6 +3,7 @@ import {useForm, Controller} from "react-hook-form";
 import classes from "./Register.module.css";
 import {Button, Input} from "@chakra-ui/react";
 import axios from "axios";
+import {AUTH_TOKEN} from "../../const";
 
 export const Register = () => {
     const {handleSubmit, control, formState: {errors}} = useForm({
@@ -19,6 +20,7 @@ export const Register = () => {
     })
         .then(function (response) {
             console.log(response);
+            localStorage.setItem(AUTH_TOKEN, response.data.data.token);
         })
         .catch(function (error) {
             console.log(error);

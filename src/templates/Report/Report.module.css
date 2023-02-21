@@ -11,14 +11,42 @@
 }
 
 .aside{
-    width: 20%;
+    width: 30%;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    gap: 5px;
 }
 
 .main{
-    width: 80%;
+    width: 70%;
     display: flex;
     align-items: flex-start;
+}
+
+.prompt{
+    padding: 15px;
+    background: rgba(127, 255, 212, 0.27);
+    color: grey;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.companyName{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.company{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.companiesList{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
 }

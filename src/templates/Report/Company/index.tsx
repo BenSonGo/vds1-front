@@ -1,27 +1,20 @@
 import React from 'react';
 import {useForm, Controller} from "react-hook-form";
 import {Button, Input} from "@chakra-ui/react";
-import axios from "axios";
-import {AUTH_TOKEN} from "../../const";
+import {api} from "../../../api";
 
 export const Company = () => {
-
-    let api = axios.create({
-        headers: {
-            Authorization: `Bearer ${localStorage.getItem(AUTH_TOKEN)}`
-        }
-    })
-
     const {handleSubmit, control, formState: {errors}} = useForm({
         defaultValues: {
             name: ''
         }
     });
+
     const onSubmit = (data: any) => api.post('http://localhost/api/company/', {
         name: data.name,
     })
         .then(function (response) {
-            console.log(response);
+            console.log(response.data.data.name);
         })
         .catch(function (error) {
             console.log(error);
@@ -39,8 +32,7 @@ export const Company = () => {
                 render={({field}) => <Input {...field} placeholder={"Company name"}/>}
             />
             {errors.name && <span>This field is required</span>}
-            <Button type="submit">Save</Button>
-
+            <Button type="submit">Add</Button>
         </form>
     );
 };
