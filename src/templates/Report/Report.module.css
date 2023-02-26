@@ -50,3 +50,12 @@
     width: 100%;
     gap: 5px;
 }
+
+.activeUnit{
+    color: #002b70;
+    font-weight: 900;
+}
+
+.pressedArrow{
+    transform: rotate(180deg);
+}

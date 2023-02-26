@@ -4,6 +4,7 @@ import classes from "./Auth.module.css";
 import {Button, Input} from "@chakra-ui/react";
 import {AUTH_TOKEN} from "../../const";
 import axios from "axios";
+import {baseUrl} from "../../api";
 
 export const Auth = () => {
     const {handleSubmit, control, formState: {errors}} = useForm({
@@ -13,7 +14,7 @@ export const Auth = () => {
             password: '',
         }
     });
-    const onSubmit = (data: any) => axios.post('http://localhost/api/login/', {
+    const onSubmit = (data: any) => axios.post(`${baseUrl}login`, {
         email: data.email,
         password: data.password,
     })
