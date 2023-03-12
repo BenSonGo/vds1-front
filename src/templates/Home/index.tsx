@@ -1,13 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import classes from "./Home.module.css";
 import Header from "../../components/Header";
 import {Register} from "../Register";
 import Report from "../Report";
 import {Route, Routes} from "react-router-dom";
 import {Auth} from "../Auth";
-import {AUTH_TOKEN} from "../../const";
-import axios from "axios";
-
 const Home = () => {
 
     return (

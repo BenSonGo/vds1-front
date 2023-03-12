@@ -1,4 +1,4 @@
-import {AUTH_TOKEN} from "../const";
+import {AUTH_TOKEN} from "../constants/const";
 import axios from "axios";
 
 export const api = axios.create({

@@ -3,7 +3,7 @@ import {useForm, Controller} from "react-hook-form";
 import classes from "./Register.module.css";
 import {Button, Input} from "@chakra-ui/react";
 import axios from "axios";
-import {AUTH_TOKEN} from "../../const";
+import {AUTH_TOKEN} from "../../constants/const";
 import {baseUrl} from "../../api";
 
 export const Register = () => {

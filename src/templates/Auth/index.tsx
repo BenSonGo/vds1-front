@@ -2,7 +2,7 @@ import React from 'react';
 import {useForm, Controller} from "react-hook-form";
 import classes from "./Auth.module.css";
 import {Button, Input} from "@chakra-ui/react";
-import {AUTH_TOKEN} from "../../const";
+import {AUTH_TOKEN} from "../../constants/const";
 import axios from "axios";
 import {baseUrl} from "../../api";
 
