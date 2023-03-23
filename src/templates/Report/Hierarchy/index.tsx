@@ -73,7 +73,7 @@ export const Hierarchy = ({companies}: {companies : Companies}) => {
             ))
             }
             {indicatorsVisible && <div>
-                <AddUnit purpose={"indicator"}/>
+                <AddUnit purpose={"indicator"} company_id={currentCompanyId}/>
             </div>}
             {indicatorPopupInfoOpen && <div className={classes.indicatorPopup}>
                     INDICATOR POPUP
@@ -88,7 +88,7 @@ export const Hierarchy = ({companies}: {companies : Companies}) => {
                 {subunits.length > 0 && subUnitsVisible && subunits.map((subunit)=> (
                     <div key={subunit.id} className={classes.unit}>
                         <div className={classes.unitName}>{subunit.name}</div>
-                        <AddIndicatorValuePopup currentIndicatorId={currentIndicatorId} subunit_id={subunit.id}/>
+                        <AddIndicatorValuePopup currentIndicatorId={currentIndicatorId} subunit_id={subunit.id} company_id={currentCompanyId}/>
                     </div>
                 ))
                 }

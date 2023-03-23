@@ -15,6 +15,9 @@ const Header = () => {
             <Link to={"/report"}>
                 <Button>Report Table</Button>
             </Link>
+            <Link to={"/diagram"}>
+                <Button>Diagram</Button>
+            </Link>
         </header>
     );
 };

@@ -27,6 +27,7 @@ export const AddUnit = ({purpose, company_id}:AddUnitType) => {
             api.post(url, {
                 name: data.name,
                 company_id: company_id,
+                resource_id: 1,
             })
                 .then(function (response) {
                     console.log(response.data.data.name);
